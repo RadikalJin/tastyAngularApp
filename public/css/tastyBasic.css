@@ -1,0 +1,43 @@
+body {
+        font-family: "Segoe UI";
+}
+#title {
+    text-justify: auto;
+    text-justify-trim: #222222;
+    color: #eaf2f5;
+    background: linear-gradient(#cc0000, red);
+    font-family: Helvetica;
+    margin: 10px auto 10px auto;
+    font-size: xx-large;
+}
+a {     color: #2e2e2e;
+}
+a:visited {     color: dimgray;
+}
+a:hover {     color: #b9dcac;
+             text-decoration: none;
+}
+.datagrid {
+    color: #ffffff;
+    font-size: small;
+    border-spacing: 0px;
+}
+.datagrid thead {
+    background: linear-gradient(#cc0000, red);
+}
+.datagrid tbody {
+    color: #000000;
+}
+.datagrid tbody tr:nth-child(odd) {
+    background: #ffffff;
+}
+.datagrid tbody tr:nth-child(even) {
+    background: darkgrey;
+}
+.datagrid th {
+    text-transform: uppercase;
+}
+.datagrid td {
+    width: 100px;
+    text-align: center;
+}

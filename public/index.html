@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Tasty Chinese Chelmsford</title>
+	<link href="css/tastyBasic.css" type="text/css" rel="stylesheet" />
+	<script src="d3.min.js" charset="utf8"></script>
+</head>
+<body>
+
+<div>
+	<div id="masthead">
+		<h1 id="title">Tasty Chinese Chelmsford</h1>
+	</div>
+
+	<nav class="navigation">
+		<ul class="nav">
+			<li><a href="/menu.html" >Menu</a></li>
+			<li><a href="/contact.html" >Contact Us</a></li>
+		</ul>
+	</nav>
+
+	<table class="datagrid" >
+		<thead>
+		<tr>
+			<th>Id</th>
+			<th>Description</th>
+			<th>Price</th>
+		</tr>
+		</thead>
+		<tbody id="menuRecords">
+		</tbody>
+	</table>
+</div>
+
+<script>
+
+	onload(populateMenu())
+
+	function populateMenu() {
+		d3.json("http://localhost:3000/menu", function(err, res) {
+			if (err) alert("Unable to load menu data.")
+			else renderMenuTable(res)
+		})
+	}
+
+	function renderMenuTable(data) {
+
+		var food = data.map(function(d) {
+			return [d.id, d.description, d.price]
+		})
+
+		var tr = d3.select("#menuRecords")
+				.selectAll("tr")
+				.data(food)
+		tr.enter()
+				.append("tr")
+
+		var td = tr.selectAll("td")
+				.data(function(d) { return d })
+		td.enter()
+				.append("td")
+		td.text(String)
+	}
+
+</script>
+</body>
+</html>
