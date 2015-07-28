@@ -11,12 +11,18 @@
 <div>
 	<div id="masthead">
 		<h1 id="title">Tasty Chinese Chelmsford</h1>
+		<h5>124 Springfield Road, Chelmsford, Essex CM2 6LF</h5>
+		<h5>01245 348888</h5><h5>10% Discount on Collection Orders</h5>
+		<h5>Sunday to Thursday: 5.00pm – 11.30pm</h5>
+		<h5>Friday & Saturday: 5.00pm – 12 midnight</h5>
 	</div>
 
 	<nav class="navigation">
 		<ul class="nav">
-			<li><a href="/menu.html" >Menu</a></li>
-			<li><a href="/contact.html" >Contact Us</a></li>
+			<li><a href="/menu.html" class="navLink">Menu</a></li>
+			<li><a href="/contact.html" class="navLink">Contact Us</a></li>
+			<li><a href="/admin.html" class="navLink">Admin</a></li>
+			<li><a href="/order.html" class="navLink">Order</a></li>
 		</ul>
 	</nav>
 
@@ -31,6 +37,7 @@
 		<tbody id="menuRecords">
 		</tbody>
 	</table>
+
 </div>
 
 <script>
@@ -38,7 +45,7 @@
 	onload(populateMenu())
 
 	function populateMenu() {
-		d3.json("http://localhost:3000/menu", function(err, res) {
+		d3.json("http://localhost:8081/getMenu", function(err, res) {
 			if (err) alert("Unable to load menu data.")
 			else renderMenuTable(res)
 		})

@@ -1,5 +1,5 @@
 body {
-        font-family: "Segoe UI";
+    font-family: "Segoe UI";
 }
 #title {
     text-justify: auto;
@@ -10,17 +10,22 @@ body {
     margin: 10px auto 10px auto;
     font-size: xx-large;
 }
-a {     color: #2e2e2e;
+#navlink {
+    color: #2e2e2e;
 }
-a:visited {     color: dimgray;
+#navlink:visited {
+    color: dimgray;
 }
-a:hover {     color: #b9dcac;
-             text-decoration: none;
+#navlink:hover {
+    color: #b9dcac;
+    text-decoration: none;
 }
 .datagrid {
     color: #ffffff;
     font-size: small;
     border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .datagrid thead {
     background: linear-gradient(#cc0000, red);
@@ -40,4 +45,8 @@ a:hover {     color: #b9dcac;
 .datagrid td {
     width: 100px;
     text-align: center;
+}
+#admin {
+    margin-left: auto;
+    margin-right: auto;
 }
