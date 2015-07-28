@@ -5,6 +5,25 @@
 	<title>Tasty Chinese Chelmsford</title>
 	<link href="css/tastyBasic.css" type="text/css" rel="stylesheet" />
 	<script src="d3.min.js" charset="utf8"></script>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script>
+		function initialize() {
+			var myLatlng = new google.maps.LatLng(51.7353234, 0.4815513);
+			var mapOptions = {
+				center: myLatlng,
+				zoom: 15,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+			var marker = new google.maps.Marker({
+				position: myLatlng,
+				map: map,
+				title: 'Tasty Chinese Chelmsford'
+			});
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
 </head>
 <body>
 
@@ -39,6 +58,8 @@
 	</table>
 
 </div>
+
+<div id="map-canvas"></div>
 
 <script>
 
